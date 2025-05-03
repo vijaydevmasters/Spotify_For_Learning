@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>{{ playlist_title }}</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2em;
+        }
+
+        li {
+            margin-bottom: 1em;
+        }
+
+        audio {
+            width: 80%;
+            max-width: 500px;
+            margin-top: 0.5em;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{ playlist_title }}</h1>
+    <p>(Folder: {{ folder_name }})</p>
+    <p><a href="{{ url_for('index') }}">← Back to Generator</a></p>
+
+    <hr>
+
+    {% if error %}
+    <p style="color: red;"><strong>Error:</strong> {{ error }}</p>
+    {% elif audio_files %}
+    <h2>Audio Segments</h2>
+    <ul>
+        {# This loop expects audio_files to be a list of strings (filenames) #}
+        {% for filename in audio_files %}
+        <li>
+            <strong>{{ filename }}</strong><br>
+            <audio controls preload="metadata"> {# preload="metadata" is often helpful #}
+                {# Construct the URL to fetch the audio file #}
+                {# 'filepath' needs the folder_name prefix for the serve_audio route #}
+                <source src="{{ url_for('serve_audio', filepath=folder_name + '/' + filename) }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No audio files found in this folder or the summary file is missing/corrupt.</p>
+    {% endif %}
+</body>
+
+</html>

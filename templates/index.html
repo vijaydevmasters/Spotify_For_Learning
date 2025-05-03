@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Playlist Generator</title>
+    <!-- Link the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Generate Audio Playlist</h1>
+
+        <!-- Flash messages for success/error -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        {# Default category to 'info' if not specified #}
+        {% set category = category if category else 'info' %}
+        <div class="flash-message flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="text_input">Enter Prompt:</label>
+                <input type="text" id="text_input" name="text_input" placeholder="e.g., 10 mins on Quantum Physics"
+                    required>
+                <button type="submit">Generate</button>
+            </div>
+        </form>
+
+        <h2>Generated Playlists</h2>
+        {% if folders %}
+        <ul class="item-list"> {# Add class for styling #}
+            {% for folder in folders %}
+            <li class="folder-item"> {# Add class for styling #}
+                <a class="folder-link" href="{{ url_for('view_folder', folder_name=folder.name) }}">
+                    {{ folder.name }} {# Display the nice folder name #}
+                </a>
+                <span class="folder-path">Path: {{ folder.path }}</span> {# Display the full path subtly #}
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No playlists generated yet. Enter a prompt above!</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
