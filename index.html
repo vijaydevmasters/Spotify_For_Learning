@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vijay Chevireddi - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<script src="script.js"></script>
+
+<!-- Hero Section -->
+<section id="hero">
+    <h1>Hi, I'm <span class="highlight">Vijay Chevireddi</span></h1>
+    <h2>Deep Learning | LLMs | Machine Learning | Computer Vision | Reinforcement Learning</h2>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn">View My Work</a>
+      <a href="Resume_Vijay_Chevireddi.pdf" class="btn" target="_blank" rel="noopener noreferrer">Resume</a>
+
+    </div>
+  </section>
+  
+
+  <!-- Navigation Bar -->
+  <nav id="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Work Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-container">
+      <img src="your-photo.jpeg" alt="Vijay Chevireddi">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I am an AI enthusiast with a strong foundation in robotics, machine learning, and Large Language Models (LLMs). My academic and professional experiences have equipped me with expertise in transformer architectures, attention mechanisms, natural language processing, and multimodal learning. I have applied these concepts in various projects using tools like PyTorch, TensorFlow, ROS2, and Hugging Face, along with Python and C/C++.
+        </p>
+        <p>
+          Currently, I work as a Research Assistant at the Fischell Department of Bioengineering, University of Maryland, where I contribute to a project modernizing oyster farming. I implemented YOLOv8 for dredger detection and later upgraded it to RT-DETR, improving IoU by 6%. I’m also developing a human pose detection system using MMPose to classify walking styles, showcasing my ability to apply LLMs in real-world scenarios.
+        </p>
+        <p>
+          Previously, as a Machine Learning Engineer at Sai Vamsi Industries, I developed a YOLOv5-based classification pipeline to streamline press component sorting, significantly improving accuracy and efficiency. This role strengthened my practical skills in model development, deployment, and optimization in an industrial environment.
+        </p>
+        <p>
+          My LLM-focused projects include Adaptive Text-to-Command Translation for Robot Navigation, where I fine-tuned a T5-small transformer to achieve perfect test accuracy. By integrating LoRA, I reduced training parameters by 99.64% while maintaining 98.5% accuracy, enabling a TurtleBot3 to navigate autonomously. Additionally, I developed a Multimodal Alignment Model for LiDAR and Image Data using Q-Former to align point cloud and image data, enhancing perception performance. In my AI Learns to Play Mario project, I implemented a DQN with a SWIN Transformer, achieving a 500-moving average reward of 2700 within 1250 episodes.
+        </p>
+        <p>
+          These experiences have sharpened my skills in developing, fine-tuning, and deploying LLMs across applications such as environmental monitoring, industrial automation, and robotics navigation. I am driven to continue applying advanced machine learning techniques to solve complex real-world problems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card" onclick="openProject('Learning_Pipeline')">
+        <img src="spotify_learning.jpg" alt="Learning Pipeline">
+        <h3>LLM-Powered Personalized Learning Pipeline – LLMs, RAG, and Speech Synthesis </h3>
+      </div>
+
+
+      <div class="project-card" onclick="openProject('T5_Navigation')">
+        <img src="t5_navigation.jpg" alt="T5 Navigation">
+        <h3>Transformer Based NLP Pipeline for Robot Navigation with LoRA Optimization</h3>
+      </div>
+      <div class="project-card" onclick="openProject('Lidar_Alignment')">
+        <img src="lidar_alignment.png" alt="LiDAR Alignment">
+        <h3>Transformers for 3D Object Detection in LiDAR Point Clouds </h3>
+      </div>
+      <div class="project-card" onclick="openProject('Mario_AI')">
+        <img src="mario_ai.jpg" alt="Mario AI">
+        <h3>Vision-Augmented Deep-Q Learning for Mario Using SWIN Transformer </h3>
+      </div>
+      <div class="project-card" onclick="openProject('Navigation_YOLO')">
+        <img src="yolo_navigation.jpg" alt="YOLO Navigation">
+        <h3>Advanced Vision Systems for Autonomous Navigation Using YOLOv8 and Homography</h3>
+      </div>
+      <div class="project-card" onclick="openProject('Airplane_Forecasting')">
+        <img src="airplane_forecast.jpg" alt="Airplane Forecasting">
+        <h3>RNN and LSTM for Passenger Forecasting</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Section -->
+  <section id="experience">
+    <h2>Work Experience</h2>
+
+    <!-- Example 1: Fischell Department of Bioengineering -->
+    <div class="experience-item">
+      <h3>Deep Learning Intern</h3>
+      <h4>Fischell Department of Bioengineering - University of Maryland (June 2024 – Present)</h4>
+      <p>
+        <p>
+        •	Implemented YOLOv8 for dredger detection in a University of Maryland initiative to modernize oyster farming, later upgrading to RT-DETR which improved IoU by 6%.
+      </p>
+      <p>
+        •	Developed human pose detection for walking style classification using MMPose and a CNN transformer, enhancing classification accuracy and contributing to improved gait analysis.
+      </p>
+      </p>
+      <!-- Optional photo or video here -->
+      <div class="experience-media">
+        <img src="my_lab_photo.jpeg" alt="Lab Work" />
+        <!-- Embed videos without hardcoded widths -->
+        <video controls>
+          <source src="my_dredger_lab_demo.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+
+        <video controls>
+          <source src="dredger_detection_1.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+        
+        <video controls>
+          <source src="Farang_45_1.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+        <img src="egofall.jpg" alt="Lab Work" style="height: 80%;">
+
+        
+      </div>
+    </div>
+
+    <!-- Example 2: Sai Vamsi Industries -->
+    <div class="experience-item">
+      <h3>Machine Learning Engineer</h3>
+      <h4>Sai Vamsi Industries (Jan 2022 – May 2023)</h4>
+      <p>
+        <p>
+        •	Integrated a camera-based system using the YOLO framework to detect visual anomalies in press tool machines, showcasing applied computer vision and image understanding skills. 
+      </p>
+      <p>
+        •	Combined vibration data from Fluke 3561 FC Vibration Sensors with real-time image analysis to enhance defect detection by 5%, demonstrating practical software development and distributed training methodologies. 
+      </p>
+      </p>
+      <!-- Photos / videos for this job as well -->
+      <!-- <div class="experience-media">
+        <img src="my_yolo_demo.jpg" alt="YOLO Demo" />
+      </div> -->
+    </div>
+
+  </section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:vijaydevreddychevireddi@gmail.com">vijaydevreddychevireddi@gmail.com</a></p>
+    <p>Phone: 240-940-9294</p>
+    <p>
+      GitHub: <a href="https://github.com/vijaydevmasters" target="_blank">
+        <i class="fab fa-github"></i> vijaydevmasters
+      </a>
+    </p>
+    <p>
+      LinkedIn: <a href="http://www.linkedin.com/in/vijay-chevireddi" target="_blank">
+        <i class="fab fa-linkedin"></i> Vijay Chevireddi
+      </a>
+    </p>
+  </section>
+  
