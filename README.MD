@@ -1,7 +1,7 @@
 # Audio Playlist Generator
 
 This project generates personalized audio playlists based on user prompts. It uses AI models to analyze prompts, generate scripts, and convert them into audio files.
-
+![](spotify_learning.jpeg)
 ## How to Run
 
 1.  Ensure you have all the required dependencies installed.
